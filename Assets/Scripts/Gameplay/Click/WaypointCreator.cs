@@ -12,21 +12,12 @@ public class WaypointCreator : MonoBehaviour
 		humanController = GetComponent<HumanController>();
 	}
 
-    void Update()
+    public HumanController GetHumanController() => humanController;
+    public Transform CreatePoint(Vector3 mousePosition)
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            CreatePoint();
-        }
-    }
-
-    private void CreatePoint()
-    {
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0;
 
         GameObject point = Instantiate(pointPrefab, mousePosition, Quaternion.identity);
-
-		humanController.SetTarget(point.transform);
+        return point.transform;
     }
 }
