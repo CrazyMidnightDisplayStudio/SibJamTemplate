@@ -6,6 +6,7 @@ namespace Game.Services.Debugging.Gameplay.Radar
     public class RadarTarget : MonoBehaviour
     {
         [SerializeField] private SpriteRenderer _targetRenderer;
+        [SerializeField] private bool _isStatic = true;
         
         private SpriteRenderer _echoRenderer;
         
@@ -28,7 +29,7 @@ namespace Game.Services.Debugging.Gameplay.Radar
 
         private void Update()
         {
-            if (_isEcho) return;
+            if (_isStatic || _isEcho) return;
             
             transform.position = _targetRenderer.transform.position;
         }
