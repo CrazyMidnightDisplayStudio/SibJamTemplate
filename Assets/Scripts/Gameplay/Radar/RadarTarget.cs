@@ -9,6 +9,7 @@ namespace Game.Services.Debugging.Gameplay.Radar
         [SerializeField] private bool _isStatic = true;
         
         private SpriteRenderer _echoRenderer;
+        private CapsuleCollider2D _targetCollider;
         
         private float _disappearTimer;
         private float _disappearTimerMax;
@@ -19,9 +20,15 @@ namespace Game.Services.Debugging.Gameplay.Radar
 
         private void Start()
         {
+            gameObject.layer = LayerMask.NameToLayer("RadarTarget");
             _echoRenderer = gameObject.AddComponent<SpriteRenderer>();
+            _targetCollider = gameObject.AddComponent<CapsuleCollider2D>();
+            _targetCollider.isTrigger = true;
+            _targetCollider.size = new Vector2(0.2f, 0.2f);
+            
             _echoRenderer.sprite = _targetRenderer.sprite;
             _echoRenderer.color = _targetRenderer.color;
+            _echoRenderer.enabled = false;
             _disappearTimerMax = 1f;
             _color = _targetRenderer.material.color;
             _startColor = _color;
@@ -36,7 +43,7 @@ namespace Game.Services.Debugging.Gameplay.Radar
 
         public void Ping()
         {
-            Debug.Log("Ping");
+            _echoRenderer.enabled = true;
             transform.position = _targetRenderer.transform.position;
             transform.rotation = _targetRenderer.transform.rotation;
             _disappearTimer = 0f;
@@ -58,6 +65,7 @@ namespace Game.Services.Debugging.Gameplay.Radar
 
             _color.a = 0f;
             _echoRenderer.material.color = _color;
+            _echoRenderer.enabled = false;
             _isEcho = false;
         }
     }
