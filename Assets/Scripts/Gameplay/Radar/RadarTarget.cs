@@ -60,7 +60,7 @@ namespace Game.Services.Debugging.Gameplay.Radar
                 _color.a = Mathf.Lerp(_disappearTimerMax, 0f, _disappearTimer / _disappearTimerMax);
                 _echoRenderer.material.color = _color;
                 _echoRenderer.sprite = _targetRenderer.sprite;
-                await UniTask.NextFrame();
+                await UniTask.WaitForSeconds(0.01f);
             }
 
             _color.a = 0f;
