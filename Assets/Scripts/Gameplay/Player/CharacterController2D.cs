@@ -2,9 +2,7 @@ using UnityEngine;
 
 public class CharacterController2D : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public float rotationSpeed = 700f;
-    public float maxSpeed = 10f;
+    public float rotationSpeed = 350f;
 
     private Rigidbody2D rb;
 
@@ -13,13 +11,13 @@ public class CharacterController2D : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    public void Move(Vector2 direction)
+    public void Move(Vector2 direction, float moveSpeed, float maxSpeed)
     {
-        rb.velocity = direction * moveSpeed;
+        rb.velocity = direction * moveSpeed * Time.deltaTime;
 
         if (rb.velocity.magnitude > maxSpeed)
         {
-            rb.velocity = rb.velocity.normalized * maxSpeed;
+            rb.velocity = rb.velocity.normalized * maxSpeed * Time.deltaTime;
         }
     }
 

@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - ClickPoint
+  - Body
+  - Human
+  - PatrolPoint
   layers:
   - Default
   - TransparentFX
@@ -15,9 +19,9 @@ TagManager:
   - Walls
   - Doors
   - Characters
-  - 
-  - 
-  - 
+  - Items
+  - Closed Doors
+  - Enemy For Raycast
   - 
   - 
   - 
