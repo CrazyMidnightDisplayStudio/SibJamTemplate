@@ -9,6 +9,8 @@ TagManager:
   - Body
   - Human
   - PatrolPoint
+  - ship
+  - asteroid
   layers:
   - Default
   - TransparentFX
@@ -22,7 +24,7 @@ TagManager:
   - Items
   - Closed Doors
   - Enemy For Raycast
-  - 
+  - RadarTarget
   - 
   - 
   - 
@@ -46,6 +48,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: ActionUI
-    uniqueID: 455967927
+  - name: Radar
+    uniqueID: 790240761
     locked: 0
