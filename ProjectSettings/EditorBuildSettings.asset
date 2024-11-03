@@ -8,11 +8,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Boot.unity
     guid: bb52f5118320348f5910861c8bf23699
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainMenu.unity
     guid: 1a4f72638a8954bf3b587e5bd2df6178
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SceneTemplate.unity
     guid: ee0b45e7c8fdd4e6c9291396a19f1275
+  - enabled: 1
+    path: Assets/Scenes/IgorScene.unity
+    guid: 22af1261d4dd0b547b97100448094f03
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
