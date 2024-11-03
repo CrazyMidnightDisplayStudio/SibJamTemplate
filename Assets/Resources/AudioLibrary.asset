@@ -12,7 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e50dc734ce4847a1866763a8904200, type: 3}
   m_Name: AudioLibrary
   m_EditorClassIdentifier: 
-  audioClips:
-  - id: Laser
-    clip: {fileID: 8300000, guid: 34c638d8d99ccfd44a261f13505ab317, type: 3}
-    type: 1
+  audioClips: []

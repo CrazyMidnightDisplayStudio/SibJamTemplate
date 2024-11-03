@@ -10,7 +10,6 @@ namespace Game.Services.Debugging
     {
         [Inject] AudioService _audioService;
 
-        [DebugKey(Key.S)]
         public void Test()
         {
             _audioService.PlaySfx("Laser");
