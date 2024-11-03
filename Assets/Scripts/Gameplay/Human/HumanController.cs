@@ -1,6 +1,7 @@
 using UnityEngine;
 using Pathfinding;
-using Unity.VisualScripting;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class HumanController : MonoBehaviour
 {
@@ -15,10 +16,16 @@ public class HumanController : MonoBehaviour
     Rigidbody2D rb;
 
     [Header("States")]
+    [SerializeField] int relaxFrequency = 2;
+    private float timer;
+
     [SerializeField, Range(1f, 2f)]
     private float stressLevel = 1f;
 
     bool isInSafePlace = true;
+
+    [SerializeField] Volume volume;
+    private ChannelMixer channelMixer;
 
     public enum MovementStyle
     {
@@ -50,6 +57,8 @@ public class HumanController : MonoBehaviour
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 
+        volume.profile.TryGet<ChannelMixer>(out channelMixer);
+
         if ( !rb || !seeker)
         {
             Debug.LogError("Some component is missing on Human GameObject.");
@@ -70,6 +79,17 @@ public class HumanController : MonoBehaviour
     void FixedUpdate()
     {
         MoveNPC();
+
+        if (isInSafePlace)
+        {
+            timer += Time.deltaTime;
+            if (timer >= 1f / relaxFrequency)
+            {
+                Relax(0.01f);
+                timer = 0f;
+            }
+
+        }
     }
 
     private void MoveNPC()
@@ -111,6 +131,21 @@ public class HumanController : MonoBehaviour
     public void Scare(float terrorAmount)
     {
         stressLevel += terrorAmount;
+        if (stressLevel > 2)
+        {
+            stressLevel = 2;
+        }
+        RedScreen(200f, 20f);
+    }
+
+    public void Relax(float relaxAmount)
+    {
+        stressLevel -= relaxAmount;
+        if (stressLevel < 1)
+        {
+            stressLevel = 1;
+        }
+        RedScreen(100f, 1f);
     }
 
     public MovementStyle CurrentMovementStyle
@@ -125,4 +160,11 @@ public class HumanController : MonoBehaviour
     }
 
     public void ToggleSafeState() => isInSafePlace = !isInSafePlace;
+
+    void RedScreen(float forRed, float forOther)
+    {
+        channelMixer.redOutRedIn.value = forRed * stressLevel;
+        channelMixer.redOutGreenIn.value  = forOther * stressLevel;
+        channelMixer.redOutBlueIn.value  = forOther * stressLevel;
+    }
 }
