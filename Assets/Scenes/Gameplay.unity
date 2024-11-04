@@ -256,6 +256,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 550933666}
     m_Modifications:
+    - target: {fileID: 4638054613479388875, guid: d0a4c74659b7f534c8ad676d60f4f7be,
+        type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 8192
+      objectReference: {fileID: 0}
     - target: {fileID: 4943519401740698812, guid: d0a4c74659b7f534c8ad676d60f4f7be,
         type: 3}
       propertyPath: m_Name
@@ -711,7 +716,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAYIezzIGfwawIAACkFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z2jAQ/SuMziVjExyS3logpAcCE9rJxRdhrbEGWfJIMl8Z/ntXsoxdygX57b7dt09rfxEuTQWZVXqhOVsqBuT7gLgz+Tbogm9wojslN/wCbc4nZ7ZwSdTnfFDLFeKxoxlVgtU8+yF3wiVHCNaS50qXc7aDqTLWIJxTYQBDWlnHlgh9DcgJ/4YvjnLG02jiThc8vUSDKx4zkBZ0lxo9jJIIf/HkpaUEZDQOzIZYy0zQsgLmpuj4oyTQ4sSnSZwvZEQPLpYpIbgJ8og9V378TVWABjc/4xSn9ZIaQgF8V1hXus9e5bkBG8zQ9DzjGm1rypKfqvGypGbfSDtQUbtG8VPUyG+qLv9LGMY+nGtVvrWN48g1sQXP9h/0nFFje2734VmnPfYWHanY062AzwLku1poVUuGQatrR60NjGbd4222aQHZvsMbqXdgXfXuLFjeXq2b4erHP00FL7feynEDbITyjvuNAI238wsF+30xoQSiTsUfA7/prr9YIfDKtbEYClNKJ2+rau1Sydx75qap7VRpCR4OoiuQVNjzGsvY+zu8i/Xa3kVeqXuFQvMQa9+MO4qHu/wougut1fF2WaZQxyWYYlVbwSV0ol3gHX2aKimbFet70tI2tc5p1qPtas7+XS0C9HFEnx8TFj1P4gmLhwmLx/kYtkmeROOnaEv87nGJc1KxboQGe/DWZFdc4p61X5bBQtPKrzvT9Ljgl1L1LOcyV5tMA8hVU+EmHDQ2wTeTzRlHgzZgLZf+vslXSoTK9sDSW6HUTzo/WU3TrkpKKn5Q1iEpmfpPSUocfNvltYYDh6Nr3ha7kutfUEsDBBQAAAgIAAAYIew+n2QdbQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM011FQSi9KLMgoBooYgjilmSkgdrRSaqKxUaKFsWmKgYW5oXmKoa5piqFJmklqkmmaqYGJmUGSUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAAAYIezzIGfwawIAACkFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAYIew+n2QdbQAAAHgAAAAJACQAAAAAAAAAAAAAALgCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAcAMAAAAA
+    dataString: UEsDBBQAAAgIAAAYIeyvBs+GbAIAACkFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVMFy2jAQ/RVG55KxHVxCby0Q0gMJE9LJxRdhrbEGWfJIcoBk+PeuZBm7lAvy2327b5/W/iJcmhpyq/RKc7ZWDMiPEXFn8m3UB5/gRPdKbvkndDnvnNnSJVGf80otV4jHjmZUBVbz/KfcC5ccIdhIXihdLdke5spYg3BBhQEMaWUdWyL0NSIn/BvPHOWMp2TqTp94mkWjCx5zkBZ0nxrdJWmEv3g66ygBSSaB2RIbmQta1cDcFD0/SQMtTn2axPlCRnTnYrkSgpsgj9hz7cff1iVocPMzTnFaL6kllMD3pXWlh+yXojBggxmanhdco21tWfJLtV5W1BxaaR9UNK7RbDpLvK626vq/hHHsw4VW1VPXOI5cE1vy/PBKzzk1duD2EF702mNv0ZGKA90JeC9BPquVVo1kGLS6cdTGQLLoH6+zzUvIDz3eSr0Bm3pwZ8Hy7mrdDBc//mkueLXzVk5aYCuUd9xvBGi8nd8o2O+LCSUQdSr+GHij++FihcAj18ZiKEwpnbydarRLJUvvmZumsXOlJXg4iK5BUmHPGyxjb+/wJjZoexN5pO4VCs1DrHszbige7vOj6Ca0UcfrZZlSHddgypfGCi6hF+0Cz+jTXEnZrtjQk462bXRB8wFt33D272oRoPcJfbhPWfQwjacsHqcsnhQT2KVFGk2+Rzvid49LnJOKTSs02IO3JvviEves+7KMVprWft2ZpscV/6zUwHIuC7XNNYB8aStchYPGJvhmsiXjaNAWrOXS3zf5yohQ+QFYdi2U+UmXJ6tp1lfJSM0/lHVIRub+U5IRB193eaPhg8PRNe+KXcjlL1BLAwQUAAAICAAAGCHsPp9kHW0AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNdRUEovSizIKAaKGII4pZkpIHa0UmqisVGihbFpioGFuaF5iqGuaYqhSZpJapJpmqmBiZlBklIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAAGCHsrwbPhmwCAAApBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAGCHsPp9kHW0AAAB4AAAACQAkAAAAAAAAAAAAAAC5AgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAHEDAAAAAA==
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -3185,7 +3190,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 21
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -4388,6 +4393,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 550933666}
     m_Modifications:
+    - target: {fileID: 4638054613479388875, guid: d0a4c74659b7f534c8ad676d60f4f7be,
+        type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 8192
+      objectReference: {fileID: 0}
     - target: {fileID: 4943519401740698812, guid: d0a4c74659b7f534c8ad676d60f4f7be,
         type: 3}
       propertyPath: m_Name
@@ -10031,6 +10041,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 550933666}
     m_Modifications:
+    - target: {fileID: 4638054613479388875, guid: d0a4c74659b7f534c8ad676d60f4f7be,
+        type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 8192
+      objectReference: {fileID: 0}
     - target: {fileID: 4943519401740698812, guid: d0a4c74659b7f534c8ad676d60f4f7be,
         type: 3}
       propertyPath: m_Name
@@ -12989,6 +13004,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 550933666}
     m_Modifications:
+    - target: {fileID: 4638054613479388875, guid: d0a4c74659b7f534c8ad676d60f4f7be,
+        type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 8192
+      objectReference: {fileID: 0}
     - target: {fileID: 4943519401740698812, guid: d0a4c74659b7f534c8ad676d60f4f7be,
         type: 3}
       propertyPath: m_Name
@@ -13057,6 +13077,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 550933666}
     m_Modifications:
+    - target: {fileID: 4638054613479388875, guid: d0a4c74659b7f534c8ad676d60f4f7be,
+        type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 8192
+      objectReference: {fileID: 0}
     - target: {fileID: 4943519401740698812, guid: d0a4c74659b7f534c8ad676d60f4f7be,
         type: 3}
       propertyPath: m_Name
@@ -14014,6 +14039,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 550933666}
     m_Modifications:
+    - target: {fileID: 4638054613479388875, guid: d0a4c74659b7f534c8ad676d60f4f7be,
+        type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4943519401740698812, guid: d0a4c74659b7f534c8ad676d60f4f7be,
         type: 3}
       propertyPath: m_Name
@@ -14405,6 +14435,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3446987993502112315, guid: b8a350822284f0a47ba5da589783ab18,
+        type: 3}
+      propertyPath: rayCastMask.m_Bits
+      value: 10176
       objectReference: {fileID: 0}
     - target: {fileID: 5198540005345083855, guid: b8a350822284f0a47ba5da589783ab18,
         type: 3}
@@ -14946,6 +14981,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 550933666}
     m_Modifications:
+    - target: {fileID: 4638054613479388875, guid: d0a4c74659b7f534c8ad676d60f4f7be,
+        type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 8192
+      objectReference: {fileID: 0}
     - target: {fileID: 4943519401740698812, guid: d0a4c74659b7f534c8ad676d60f4f7be,
         type: 3}
       propertyPath: m_Name
@@ -15103,7 +15143,7 @@ PrefabInstance:
     - target: {fileID: 113689062934161461, guid: 868d6346fbebb7c47a356d7930c180a8,
         type: 3}
       propertyPath: m_Size.x
-      value: 0.52999973
+      value: 0.47
       objectReference: {fileID: 0}
     - target: {fileID: 113689062934161461, guid: 868d6346fbebb7c47a356d7930c180a8,
         type: 3}
@@ -15131,10 +15171,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1715498563624028558, guid: 868d6346fbebb7c47a356d7930c180a8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 5597610420586644933, guid: 868d6346fbebb7c47a356d7930c180a8,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 100
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630834845780941726, guid: 868d6346fbebb7c47a356d7930c180a8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8476602023990502982, guid: 868d6346fbebb7c47a356d7930c180a8,
         type: 3}
