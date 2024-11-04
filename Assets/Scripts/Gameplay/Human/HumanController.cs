@@ -34,6 +34,7 @@ public class HumanController : MonoBehaviour
     private ChannelMixer channelMixer;
 
     [SerializeField] private Transform _terminal1target;
+    [SerializeField] private Transform _shelfTarget;
     [SerializeField] private Image _keyCard1;
     [SerializeField] private Image _keyCard2;
 
@@ -118,6 +119,11 @@ public class HumanController : MonoBehaviour
         if (eventName == "HumanToTheTerminal")
         {
             SetTarget(_terminal1target);
+        }
+
+        if (eventName == "HumanToTheShelf")
+        {
+            SetTarget(_shelfTarget);
         }
     }
 
