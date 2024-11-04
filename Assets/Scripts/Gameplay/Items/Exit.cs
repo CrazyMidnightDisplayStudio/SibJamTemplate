@@ -52,10 +52,8 @@ namespace Gameplay.Items
         private void EndGame()
         {
             Debug.Log("end game");
-            if (_keyNumber == 2)
-            {
-                _sceneTransitionService.LoadScene("FinalCutscene");
-            }
+            Debug.Log($"KeyNumber: {_keyNumber}");
+            _sceneTransitionService.LoadScene("FinalCutscene");
         }
 
         public Dictionary<string, Action> GetActions() => actions;
