@@ -1,5 +1,6 @@
 ﻿using Core.Audio;
 using UnityEngine;
+using UnityEngine.UI;
 using Zenject;
 
 namespace Assets.Scripts.Gameplay.Audio
@@ -7,13 +8,12 @@ namespace Assets.Scripts.Gameplay.Audio
     public class AudioManager : MonoBehaviour
     {
         private AudioService _audioService;
-
+   
         [Inject]
         public void Construct(AudioService audioSource)
         {
             _audioService = audioSource;
         }
-
 
         public void Master(float value)
         {
