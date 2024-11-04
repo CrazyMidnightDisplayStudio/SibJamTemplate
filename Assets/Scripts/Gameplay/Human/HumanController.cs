@@ -1,3 +1,6 @@
+using System;
+using Core.Services.EventBus;
+using Game.Services.Events;
 using UnityEngine;
 using Pathfinding;
 using UnityEngine.Rendering;
@@ -31,6 +34,7 @@ public class HumanController : MonoBehaviour
     [SerializeField] Volume volume;
     private ChannelMixer channelMixer;
 
+    [SerializeField] private Transform _terminal1target;
     [SerializeField] private Image _keyCard1;
     [SerializeField] private Image _keyCard2;
 
@@ -111,6 +115,18 @@ public class HumanController : MonoBehaviour
         Observable.Interval(System.TimeSpan.FromSeconds(1))
             .Subscribe(_ => CheckPosition())
             .AddTo(this);
+    }
+
+    private void OnEnable() => CMDEventBus.Subscribe<CurrentEvent>(Brain);
+    private void OnDisable() => CMDEventBus.Unsubscribe<CurrentEvent>(Brain);
+
+    private void Brain(CurrentEvent e)
+    {
+        var eventName = e.EventName;
+        if (eventName == "HumanToTheTerminal")
+        {
+            SetTarget(_terminal1target);
+        }
     }
 
     void UpdatePath()
