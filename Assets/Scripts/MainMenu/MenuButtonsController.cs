@@ -22,12 +22,12 @@ namespace MainMenu
 
         private void OnEnable()
         {
-            _startGameButton.onClick.AddListener(() => _sceneTransitionService.LoadScene("Gameplay").Forget() );
+            _startGameButton.onClick.AddListener(() => _sceneTransitionService.LoadScene("Cutscene").Forget() );
         }
 
         private void OnDisable()
         {
-            _startGameButton.onClick.RemoveListener(() => _sceneTransitionService.LoadScene("Gameplay").Forget() );
+            _startGameButton.onClick.RemoveListener(() => _sceneTransitionService.LoadScene("Cutscene").Forget() );
         }
     }
 }
