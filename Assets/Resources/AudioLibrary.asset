@@ -13,6 +13,66 @@ MonoBehaviour:
   m_Name: AudioLibrary
   m_EditorClassIdentifier: 
   audioClips:
-  - id: Laser
-    clip: {fileID: 8300000, guid: 34c638d8d99ccfd44a261f13505ab317, type: 3}
+  - id: almost there
+    clip: {fileID: 8300000, guid: ccf9762363d567a4ab73d13c73449c8d, type: 3}
+    type: 1
+  - id: coming
+    clip: {fileID: 8300000, guid: d59b6c304acbc7748b5168fe858e88d0, type: 3}
+    type: 1
+  - id: on my way
+    clip: {fileID: 8300000, guid: 378842b82eca89649ab6085fbf34cdb1, type: 3}
+    type: 1
+  - id: on the way
+    clip: {fileID: 8300000, guid: f1332ec11d28cc94fb1ae6c47f2c1d17, type: 3}
+    type: 1
+  - id: ambient game 3
+    clip: {fileID: 8300000, guid: 6fbd8d194da365242b97c8e0aca16069, type: 3}
+    type: 0
+  - id: game_theme_menu (2)
+    clip: {fileID: 8300000, guid: 4688cedbc248f9f4f8aa41f387415c52, type: 3}
+    type: 0
+  - id: 2 SHAGA
+    clip: {fileID: 8300000, guid: 6ee7492f319efc34f8c5c9d22b1b30a4, type: 3}
+    type: 1
+  - id: 4 shaga (beg) 1
+    clip: {fileID: 8300000, guid: 863bee74a93e4bc42b31aa3aeff854c5, type: 3}
+    type: 1
+  - id: Door_Open
+    clip: {fileID: 8300000, guid: 7fea2af7dd34ccc459f9aba15c185048, type: 3}
+    type: 1
+  - id: MONSTR GOLOS !
+    clip: {fileID: 8300000, guid: ec3711a11720d024888bcad107d79eaf, type: 3}
+    type: 1
+  - id: MONSTR GOLOS 2
+    clip: {fileID: 8300000, guid: 4e7b245096638d149b1db13737c0b481, type: 3}
+    type: 1
+  - id: PANIKA_DYHANIE
+    clip: {fileID: 8300000, guid: 12741e66d5754a745965131898deadd0, type: 3}
+    type: 1
+  - id: POMEHI
+    clip: {fileID: 8300000, guid: 9ef89c54cd6299148bb84ae81c121bff, type: 3}
+    type: 1
+  - id: RADAR
+    clip: {fileID: 8300000, guid: c9cf0dd7b8f848047bdcef543b453601, type: 3}
+    type: 1
+  - id: RADAR_EBAKA ZA STENOI
+    clip: {fileID: 8300000, guid: 34a741312c33a114b97758cf3ddde4bb, type: 3}
+    type: 1
+  - id: RADAR_PEREKLUCHENIE
+    clip: {fileID: 8300000, guid: dae59cfd1c1bee944ba3d687735578e9, type: 3}
+    type: 1
+  - id: robo_ezda_LONG
+    clip: {fileID: 8300000, guid: 56869581aa30dd048b7fb72509d1aaab, type: 3}
+    type: 1
+  - id: robo_ezda_SHORT
+    clip: {fileID: 8300000, guid: 3b0f2da30d00e6446854b17e511de934, type: 3}
+    type: 1
+  - id: robo_razvorot
+    clip: {fileID: 8300000, guid: 965b373b80ff94b41bb050f0872f4f9f, type: 3}
+    type: 1
+  - id: RYCHAG
+    clip: {fileID: 8300000, guid: 57b73255a1ea1104da8c88529e2a51ae, type: 3}
+    type: 1
+  - id: VNIMANIE_EBAKA
+    clip: {fileID: 8300000, guid: 143be46042ac86f4a8f9a85ef15b3ae7, type: 3}
     type: 1
