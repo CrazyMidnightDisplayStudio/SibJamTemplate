@@ -20,7 +20,7 @@ GameObject:
   m_Layer: 11
   m_Name: Enemy
   m_TagString: Enemy
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -97,7 +97,7 @@ MonoBehaviour:
   - Human
   rayCastMask:
     serializedVersion: 2
-    m_Bits: 1984
+    m_Bits: 10048
 --- !u!114 &1569348258028569566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,6 +115,13 @@ MonoBehaviour:
   - {fileID: 0}
   highPriorityTag: Human
   nextPatrolPointDistance: 0.5
+  potentialPatrolPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  secToLostHuman: 5
 --- !u!58 &5757623920761108916
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -150,7 +157,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.36
+  m_Radius: 0.2367569
 --- !u!114 &2592344393920355055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,7 +282,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8626159737553527125}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1

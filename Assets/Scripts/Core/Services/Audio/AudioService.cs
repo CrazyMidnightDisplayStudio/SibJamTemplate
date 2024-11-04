@@ -44,7 +44,7 @@ namespace Core.Audio
             var clip = _audioLibrary.GetClipById(id);
             if (clip != null)
             {
-                _audioPlayer.PlaySfx(clip, volume);
+                _audioPlayer.PlaySfx(clip, volume, audioSource, oneShot);
             }
             else
             {
@@ -52,6 +52,7 @@ namespace Core.Audio
             }
         }
 
+        public AudioClip GetAudioClipById(string id) => _audioLibrary.GetClipById(id);
         public void StopMusic() => _audioPlayer.StopMusic();
     }
 }
