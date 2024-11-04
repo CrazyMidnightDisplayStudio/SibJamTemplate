@@ -80,6 +80,11 @@ public class EnemyVision : MonoBehaviour
         return detectedTarget != null; // Возвращает true, если цель обнаружена
     }
 
+    public void LostHuman()
+    {
+        detectedTarget = null;
+    }
+
     public Transform GetDetectedTarget()
     {
         return detectedTarget.transform; // Возвращает обнаруженную цель
