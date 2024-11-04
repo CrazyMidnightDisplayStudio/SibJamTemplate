@@ -2,6 +2,7 @@ using UnityEngine;
 using Pathfinding;
 using Unity.VisualScripting;
 using System.Collections.Generic;
+using System.Collections;
 
 public class Patrol : MonoBehaviour
 {
@@ -32,9 +33,7 @@ public class Patrol : MonoBehaviour
     {
         if (enemyVision != null && enemyVision.TargetDetected() && enemyVision.GetDetectedTarget().gameObject.CompareTag(highPriorityTag))
         {
-            if (destinationSetter.target && destinationSetter.target.gameObject.CompareTag(highPriorityTag))
-                return;
-
+            StartCoroutine(ForgetAboutHuman());
             destinationSetter.target = enemyVision.GetDetectedTarget();
         }
         else if (destinationSetter.target != null)
@@ -62,5 +61,11 @@ public class Patrol : MonoBehaviour
     {
         if (patrolPoints.Contains(newPp))
             patrolPoints.Remove(newPp);
+    }
+
+    IEnumerator ForgetAboutHuman()
+    {
+        yield return new WaitForSeconds(5f);
+        destinationSetter.target = patrolPoints[currentPointIndex];
     }
 }
