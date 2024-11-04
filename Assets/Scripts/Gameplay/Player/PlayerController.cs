@@ -9,10 +9,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float speed = 2f;
     [SerializeField] float maxSpeed = 5f;
     [SerializeField] private Image _keyCard1;
+    [SerializeField] Sprite brokenSprite;
+
+    bool isInputOn = true;
 
     private Vector2 moveDirection;
     private float turnInput;
-    
+
     private CapsuleCollider2D _passKeyCollider;
 
     void Start()
@@ -63,9 +66,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            gameObject.GetComponentInChildren<SpriteRenderer>().sprite = brokenSprite;
+            isInputOn = false;
+        }
+    }
+
     void Update()
     {
-        HandleInput();
+        if (isInputOn)
+            HandleInput();
     }
 
     void FixedUpdate()
