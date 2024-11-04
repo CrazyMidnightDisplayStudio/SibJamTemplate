@@ -15,9 +15,10 @@ namespace Gameplay.Items
 {
     public class Terminal : MonoBehaviour, IInteractAction
     {
+        [SerializeField] private CapsuleCollider2D _keyTriggerZone;
+        
         private Dictionary<string, Action> actions = new Dictionary<string, Action>();
         private int _state = 0;
-        private CapsuleCollider2D _keyTriggerZone;
         
         private AudioService _audioService;
         private DoorsService _doorsService;
@@ -59,7 +60,6 @@ namespace Gameplay.Items
             actions.Add("terminal", InteractWithTerminal);
             
             //add disabled KeyTriggerZone
-            _keyTriggerZone = gameObject.AddComponent<CapsuleCollider2D>();
             _keyTriggerZone.enabled = false;
             _keyTriggerZone.isTrigger = true;
             _keyTriggerZone.size = Vector2.one * 1.8f;
@@ -88,23 +88,37 @@ namespace Gameplay.Items
             
             if (_state == 2 && eventName != "InteractWithTerminal")
             {
-                IsPreparedCardAction = false;
-                Debug.Log($"Terminal state: {_state}");
-            }
-        }
-
-        private void OnTriggerEnter(Collider other)
-        {
-            if (other.CompareTag("Human"))
-            {
-                if (other.GetComponent<HumanController>().HaveKeyCardNumber == 1)
+                if (eventName != "InteractWithTerminal")
                 {
-                    // TODO : Open Doors
+                    IsPreparedCardAction = false;
+                }
+
+                if (eventName == "HumanToTheTerminal")
+                {
+                    IsPreparedCardAction = true;
                 }
             }
         }
 
-        private async UniTask UnlockDoorsWithDelay(float delay)
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("Human"))
+            {
+                Debug.Log($"Collidion with human");
+                if (other.gameObject.TryGetComponent<HumanController>(out var humanController))
+                {
+                    Debug.Log($"Unlock doors");
+                    humanController.HaveKeyCardNumber = 0;
+                    UnlockDoorsWithDelay().Forget();
+                }
+                else
+                {
+                    Debug.LogError($"humanController is null");
+                }
+            }
+        }
+
+        private async UniTask UnlockDoorsWithDelay()
         {
             var audioSource = GetComponent<AudioSource>();
             PopupNoUI popup;
@@ -124,6 +138,7 @@ namespace Gameplay.Items
             
             // open doors
             _doorsService.UnlockDoors(new []{1, 2, 3, 4});
+            _doorsService.OpenDoors(new []{1, 2, 3, 4});
             _popupService.DisablePopup(popup);
             Destroy(this);
         }
@@ -141,8 +156,8 @@ namespace Gameplay.Items
                     _popupService.GetPopup("I don't have the hands to use the kay card", transform.position, 3f);
                     break;
                 case 2:
-                    _audioService.PlaySfx("I'm going", 1f);
-                    IsPreparedCardAction = true;
+                    //_audioService.PlaySfx("I'm going", 1f);
+                    CMDEventBus.Publish(new CurrentEvent("HumanToTheTerminal"));
                     break;
             }
         }
