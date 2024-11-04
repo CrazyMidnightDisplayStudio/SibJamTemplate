@@ -2,6 +2,7 @@ using UnityEngine;
 using Pathfinding;
 using Unity.VisualScripting;
 using System.Collections.Generic;
+using System.Collections;
 
 public class Patrol : MonoBehaviour
 {
@@ -12,9 +13,12 @@ public class Patrol : MonoBehaviour
 
     [SerializeField] Transform[] potentialPatrolPoints;
 
+    [SerializeField] float secToLostHuman = 5f;
+
     private AIDestinationSetter destinationSetter;
     private EnemyVision enemyVision;
     private int currentPointIndex = 0;
+    bool isPatrol = true;
 
     void Start()
     {
@@ -32,13 +36,15 @@ public class Patrol : MonoBehaviour
     {
         if (enemyVision != null && enemyVision.TargetDetected() && enemyVision.GetDetectedTarget().gameObject.CompareTag(highPriorityTag))
         {
-            if (destinationSetter.target && destinationSetter.target.gameObject.CompareTag(highPriorityTag))
-                return;
+            if (isPatrol)
+                StartCoroutine(ForgetAboutHuman());
 
+            isPatrol = false;
             destinationSetter.target = enemyVision.GetDetectedTarget();
         }
         else if (destinationSetter.target != null)
         {
+            isPatrol = true;
             float distanceToTarget = Vector3.Distance(transform.position, destinationSetter.target.position);
             if (distanceToTarget < nextPatrolPointDistance)
             {
@@ -62,5 +68,13 @@ public class Patrol : MonoBehaviour
     {
         if (patrolPoints.Contains(newPp))
             patrolPoints.Remove(newPp);
+    }
+
+    IEnumerator ForgetAboutHuman()
+    {
+        yield return new WaitForSeconds(secToLostHuman);
+        destinationSetter.target = patrolPoints[currentPointIndex];
+        enemyVision.LostHuman();
+        isPatrol = true;
     }
 }

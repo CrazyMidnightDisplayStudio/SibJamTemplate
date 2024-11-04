@@ -6,6 +6,8 @@ using Pathfinding;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
+using Core.Audio;
+using Zenject;
 
 public class HumanController : MonoBehaviour
 {
@@ -34,6 +36,9 @@ public class HumanController : MonoBehaviour
     [SerializeField] private Transform _terminal1target;
     [SerializeField] private Image _keyCard1;
     [SerializeField] private Image _keyCard2;
+
+    [SerializeField] private float VolumeSFXMisic = 0.2f;
+    private AudioService _audioService;
 
     private int _haveKeyCardNumber;
     public int HaveKeyCardNumber
@@ -83,7 +88,11 @@ public class HumanController : MonoBehaviour
                 return 1f;
         }
     }
-
+    [Inject]
+    public void Construct(AudioService audioService)
+    {
+        _audioService = audioService;
+    }
     void Start()
     {
         seeker = GetComponent<Seeker>();
@@ -155,6 +164,10 @@ public class HumanController : MonoBehaviour
         if (distance < nextWaypointDistance)
         {
             currentWaypoint++;
+        }
+        if(rb.velocity != Vector2.zero)
+        {
+            //_audioService.PlaySfx("2 SHAGA", VolumeSFXMisic);
         }
     }
 
