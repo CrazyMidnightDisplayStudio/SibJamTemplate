@@ -29,6 +29,15 @@ namespace Game.Services.Debugging.Gameplay.Services
             {
                 Debug.LogError("Non unique doors id");
             }
+            _doorsMap[10].Lock();
+        }
+
+        public void StayOpenDoors(int[] doorIDs)
+        {
+            foreach (var id in doorIDs)
+            {
+                _doorsMap[id].IsStayOpen = true;
+            }
         }
 
         public void LockDoors(int[] doorIDs)

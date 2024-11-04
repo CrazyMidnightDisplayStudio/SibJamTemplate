@@ -14,6 +14,8 @@ namespace Gameplay.Items
 
         private AudioService _audioService;
         public bool IsOpen { get; private set; }
+        
+        public bool IsStayOpen { get; set; }
         public bool IsLocked { get; private set; }
         public int DoorID => _doorID;
 
@@ -53,6 +55,7 @@ namespace Gameplay.Items
 
         private void OnTriggerEnter2D(Collider2D other)
         {
+            if (IsStayOpen) return;
             if (other.CompareTag("Player") || other.CompareTag("Human"))
             {
                 OpenDoor();
@@ -61,6 +64,7 @@ namespace Gameplay.Items
 
         private void OnTriggerExit2D(Collider2D other)
         {
+            if (IsStayOpen) return;
             if (other.CompareTag("Player") || other.CompareTag("Human"))
             {
                 lockedSign.enabled = false;

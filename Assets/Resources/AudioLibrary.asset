@@ -40,7 +40,7 @@ MonoBehaviour:
   - id: Door_Open
     clip: {fileID: 8300000, guid: 7fea2af7dd34ccc459f9aba15c185048, type: 3}
     type: 1
-  - id: MONSTR GOLOS !
+  - id: monstr golos
     clip: {fileID: 8300000, guid: ec3711a11720d024888bcad107d79eaf, type: 3}
     type: 1
   - id: MONSTR GOLOS 2

@@ -140,6 +140,7 @@ namespace Gameplay.Items
             // open doors
             _doorsService.UnlockDoors(new []{1, 2, 3, 4});
             _doorsService.OpenDoors(new []{1, 2, 3, 4});
+            _doorsService.StayOpenDoors(new []{1, 2, 3, 4});
             _patrol.addAllPoints();
             _popupService.DisablePopup(popup);
             Destroy(this);
