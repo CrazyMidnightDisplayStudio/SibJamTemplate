@@ -13,9 +13,12 @@ public class Patrol : MonoBehaviour
 
     [SerializeField] Transform[] potentialPatrolPoints;
 
+    [SerializeField] float secToLostHuman = 5f;
+
     private AIDestinationSetter destinationSetter;
     private EnemyVision enemyVision;
     private int currentPointIndex = 0;
+    bool isPatrol = true;
 
     void Start()
     {
@@ -33,11 +36,15 @@ public class Patrol : MonoBehaviour
     {
         if (enemyVision != null && enemyVision.TargetDetected() && enemyVision.GetDetectedTarget().gameObject.CompareTag(highPriorityTag))
         {
-            StartCoroutine(ForgetAboutHuman());
+            if (isPatrol)
+                StartCoroutine(ForgetAboutHuman());
+
+            isPatrol = false;
             destinationSetter.target = enemyVision.GetDetectedTarget();
         }
         else if (destinationSetter.target != null)
         {
+            isPatrol = true;
             float distanceToTarget = Vector3.Distance(transform.position, destinationSetter.target.position);
             if (distanceToTarget < nextPatrolPointDistance)
             {
@@ -65,7 +72,9 @@ public class Patrol : MonoBehaviour
 
     IEnumerator ForgetAboutHuman()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(secToLostHuman);
         destinationSetter.target = patrolPoints[currentPointIndex];
+        enemyVision.LostHuman();
+        isPatrol = true;
     }
 }
