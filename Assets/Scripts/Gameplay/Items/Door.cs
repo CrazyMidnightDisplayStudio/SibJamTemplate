@@ -1,4 +1,6 @@
+using Core.Audio;
 using UnityEngine;
+using Zenject;
 
 namespace Gameplay.Items
 {
@@ -10,6 +12,7 @@ namespace Gameplay.Items
 
         private SpriteRenderer lockedSign;
 
+        private AudioService _audioService;
         public bool IsOpen { get; private set; }
         public bool IsLocked { get; private set; }
         public int DoorID => _doorID;
@@ -20,7 +23,11 @@ namespace Gameplay.Items
             animator = transform.parent.GetComponent<Animator>();
             lockedSign = GetComponentInChildren<SpriteRenderer>();
         }
-
+        [Inject]
+        public void Construct(AudioService audioService)
+        {
+            _audioService = audioService;
+        }
         public void Lock() => IsLocked = true;
         public void Unlock() => IsLocked = false;
 
@@ -31,6 +38,7 @@ namespace Gameplay.Items
                 lockedSign.enabled = true;
                 return;
             }
+            _audioService.PlaySfx("Door_Open");
             animator.SetTrigger("Open");
             doorCollider.enabled = false;
             IsOpen = true;
