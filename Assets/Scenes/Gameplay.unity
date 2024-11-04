@@ -14358,6 +14358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _keyTriggerZone: {fileID: 1690566418}
+  _patrol: {fileID: 1920214775}
 --- !u!70 &1690566418
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -14832,6 +14833,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 91901951716537466}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1920214775 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1569348258028569566, guid: b8a350822284f0a47ba5da589783ab18,
+    type: 3}
+  m_PrefabInstance: {fileID: 91901951716537466}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a40f5caa78b6374cbf97f9eb413080e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1963993331
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -16,6 +16,7 @@ namespace Gameplay.Items
     public class Terminal : MonoBehaviour, IInteractAction
     {
         [SerializeField] private CapsuleCollider2D _keyTriggerZone;
+        [SerializeField] private Patrol _patrol;
         
         private Dictionary<string, Action> actions = new Dictionary<string, Action>();
         private int _state = 0;
@@ -139,6 +140,7 @@ namespace Gameplay.Items
             // open doors
             _doorsService.UnlockDoors(new []{1, 2, 3, 4});
             _doorsService.OpenDoors(new []{1, 2, 3, 4});
+            _patrol.addAllPoints();
             _popupService.DisablePopup(popup);
             Destroy(this);
         }
