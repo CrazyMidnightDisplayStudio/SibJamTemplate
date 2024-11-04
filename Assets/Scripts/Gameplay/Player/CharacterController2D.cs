@@ -11,16 +11,19 @@ public class CharacterController2D : MonoBehaviour
     private AudioSource _audioSource;
 
     [SerializeField] private float VolumeSFXMove = 0.2f;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         _audioSource = GetComponent<AudioSource>();
     }
+
     [Inject]
     public void Construct(AudioService audioService)
     {
         _audioService = audioService;
     }
+
     public void Move(Vector2 direction, float moveSpeed, float maxSpeed)
     {
         rb.velocity = direction * moveSpeed * Time.deltaTime;
@@ -32,6 +35,7 @@ public class CharacterController2D : MonoBehaviour
 
         PlayMoveAuido(rb.velocity != Vector2.zero);
     }
+
     private void PlayMoveAuido(bool state)
     {
         if (_audioSource.enabled != state)
@@ -39,6 +43,7 @@ public class CharacterController2D : MonoBehaviour
             _audioSource.enabled = state;
         }
     }
+
     public void Rotate(float turnInput)
     {
         if (turnInput != 0)
