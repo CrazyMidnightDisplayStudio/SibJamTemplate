@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Gameplay.Popup
 {
+    [RequireComponent(typeof(TextMeshPro))]
     public class PopupNoUI : MonoBehaviour
     {
         [SerializeField] private TextMeshPro _tmp;
