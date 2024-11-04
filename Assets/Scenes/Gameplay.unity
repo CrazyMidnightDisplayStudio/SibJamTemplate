@@ -15015,6 +15015,11 @@ MonoBehaviour:
   _menuPref: {fileID: 998896053179410331, guid: a50f6359da089f34c906ed2202cd98ab,
     type: 3}
   creatorPoint: {fileID: 988840876}
+  _audioClipNameList:
+  - almost there
+  - coming
+  - on my way
+  - on the way
 --- !u!4 &1874760111
 Transform:
   m_ObjectHideFlags: 0

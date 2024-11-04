@@ -8,6 +8,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Zenject;
+using Core.Audio;
 
 namespace Assets.Scripts.Gameplay.ActionMenu
 {
@@ -20,7 +21,13 @@ namespace Assets.Scripts.Gameplay.ActionMenu
         private List<Button> buttons = new List<Button>();
         
         [SerializeField] WaypointCreator creatorPoint;
-
+        private AudioService _audioService;
+        [SerializeField] List<String> _audioClipNameList = new();
+        [Inject]
+        public void Construct(AudioService audioService)
+        {
+            _audioService = audioService;
+        }
         private void Update()
         {
             // Проверяем, было ли нажатие левой кнопки мыши
@@ -113,6 +120,8 @@ namespace Assets.Scripts.Gameplay.ActionMenu
                         action.Invoke();
                         CMDEventBus.Publish(new CurrentEvent(action.Method.Name));
                         _menu.gameObject.SetActive(false);
+                        var range = UnityEngine.Random.Range(0, _audioClipNameList.Count);
+                        _audioService.PlaySfx(_audioClipNameList[range]);
                     }
                 ).AddTo(btn.gameObject);
             return btn;
