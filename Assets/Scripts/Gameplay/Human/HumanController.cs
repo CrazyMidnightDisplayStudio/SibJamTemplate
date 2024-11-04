@@ -5,6 +5,7 @@ using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 using Core.Audio;
 using Zenject;
+using R3;
 
 public class HumanController : MonoBehaviour
 {
@@ -35,6 +36,8 @@ public class HumanController : MonoBehaviour
 
     [SerializeField] private float VolumeSFXMisic = 0.2f;
     private AudioService _audioService;
+    private AudioSource _audioSource;
+    private Vector3 lastPosition;
 
     private int _haveKeyCardNumber;
     public int HaveKeyCardNumber
@@ -96,13 +99,18 @@ public class HumanController : MonoBehaviour
 
         volume.profile.TryGet<ChannelMixer>(out channelMixer);
 
-        if ( !rb || !seeker)
+        if (!rb || !seeker)
         {
             Debug.LogError("Some component is missing on Human GameObject.");
         }
-
         InvokeRepeating("UpdatePath", 0f, 0.5f);
         HaveKeyCardNumber = 0;
+        _audioSource = GetComponent<AudioSource>();
+
+        lastPosition = gameObject.transform.position;
+        Observable.Interval(System.TimeSpan.FromSeconds(1))
+            .Subscribe(_ => CheckPosition())
+            .AddTo(this);
     }
 
     void UpdatePath()
@@ -126,7 +134,6 @@ public class HumanController : MonoBehaviour
                 Relax(0.01f);
                 timer = 0f;
             }
-
         }
     }
 
@@ -148,10 +155,6 @@ public class HumanController : MonoBehaviour
         if (distance < nextWaypointDistance)
         {
             currentWaypoint++;
-        }
-        if(rb.velocity != Vector2.zero)
-        {
-            //_audioService.PlaySfx("2 SHAGA", VolumeSFXMisic);
         }
     }
 
@@ -206,7 +209,36 @@ public class HumanController : MonoBehaviour
     void RedScreen(float forRed, float forOther)
     {
         channelMixer.redOutRedIn.value = forRed * stressLevel;
-        channelMixer.redOutGreenIn.value  = forOther * stressLevel;
-        channelMixer.redOutBlueIn.value  = forOther * stressLevel;
+        channelMixer.redOutGreenIn.value = forOther * stressLevel;
+        channelMixer.redOutBlueIn.value = forOther * stressLevel;
+    }
+    private void StepAudio(bool state)
+    {
+        if(currentMovementStyle == MovementStyle.Run)
+        {
+            _audioSource.pitch = 1.3f;
+        } else if(currentMovementStyle == MovementStyle.Walk)
+        {
+            _audioSource.pitch = 1f;
+
+        }else if(currentMovementStyle == MovementStyle.Stealth)
+        {
+            _audioSource.pitch = 0.7f;
+        }
+        _audioSource.enabled = state;
+    }
+    private void CheckPosition()
+    {
+        Vector3 currentPosition = transform.position;
+
+        if (currentPosition == lastPosition)
+        {
+            StepAudio(false);
+        }
+        else
+        {
+            StepAudio(true);
+            lastPosition = currentPosition;
+        }
     }
 }
