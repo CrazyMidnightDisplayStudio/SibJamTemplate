@@ -3,14 +3,16 @@ using System.Collections.Generic;
 
 namespace Core.Services.EventBus
 {
-    public class EventBusService
+    public static class CMDEventBus
     {
         // Словарь событий по типу
-        private readonly Dictionary<Type, List<Delegate>>
+        private static readonly Dictionary<Type, List<Delegate>>
             _eventListeners = new Dictionary<Type, List<Delegate>>();
 
+        private static bool _isPreparingKeyCard = false;
+
         // Подписка на событие определенного типа
-        public void Subscribe<T>(Action<T> listener) where T : class
+        public static void Subscribe<T>(Action<T> listener) where T : class
         {
             Type eventType = typeof(T);
 
@@ -23,7 +25,7 @@ namespace Core.Services.EventBus
         }
 
         // Отписка от события
-        public void Unsubscribe<T>(Action<T> listener) where T : class
+        public static void Unsubscribe<T>(Action<T> listener) where T : class
         {
             Type eventType = typeof(T);
 
@@ -41,7 +43,7 @@ namespace Core.Services.EventBus
         }
 
         // Вызов события для всех подписчиков
-        public void Publish<T>(T publishedEvent) where T : class
+        public static void Publish<T>(T publishedEvent) where T : class
         {
             Type eventType = typeof(T);
 

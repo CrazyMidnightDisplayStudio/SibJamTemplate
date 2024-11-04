@@ -6,7 +6,7 @@ namespace Game.Services.Debugging.Gameplay.Services
     {
         public override void InstallBindings()
         {
-            Container.Bind<DoorsService>().AsSingle();
+            Container.Bind<DoorsService>().AsSingle().NonLazy();
         }
     }
 }

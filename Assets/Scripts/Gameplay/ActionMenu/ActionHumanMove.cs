@@ -5,7 +5,7 @@ using static HumanController;
 
 namespace Assets.Scripts.Gameplay.ActionMenu
 {
-    public class ActionHumanMove: IInteractAcnion
+    public class ActionHumanMove: IInteractAction
     {
         private Dictionary<string, Action> _actions = new();
         private HumanController _humanController;
