@@ -16,7 +16,11 @@ namespace Assets.Scripts.Gameplay.Popup
             _pfPopup = pfPopup;
             if (count > 0)
             {
-                for (int i = 0; i < count; i++) CreatePopup();
+                for (int i = 0; i < count; i++)
+                {
+                    var popup = CreatePopup();
+                    popup.SetActive(false);
+                }
             }
         }
 
