@@ -1,12 +1,16 @@
 using UnityEngine;
 using Pathfinding;
+using Unity.VisualScripting;
+using System.Collections.Generic;
 
 public class Patrol : MonoBehaviour
 {
-    [SerializeField] Transform[] patrolPoints;
+    [SerializeField] List<Transform> patrolPoints;
     [SerializeField] string highPriorityTag = "Human";
 
     [SerializeField] float nextPatrolPointDistance = 0.05f;
+
+    [SerializeField] Transform[] potentialPatrolPoints;
 
     private AIDestinationSetter destinationSetter;
     private EnemyVision enemyVision;
@@ -18,7 +22,7 @@ public class Patrol : MonoBehaviour
         enemyVision = GetComponent<EnemyVision>();
         destinationSetter.target = null;
 
-        if (patrolPoints.Length > 0)
+        if (patrolPoints.Count > 0)
         {
             destinationSetter.target = patrolPoints[currentPointIndex];
         }
@@ -38,9 +42,25 @@ public class Patrol : MonoBehaviour
             float distanceToTarget = Vector3.Distance(transform.position, destinationSetter.target.position);
             if (distanceToTarget < nextPatrolPointDistance)
             {
-                currentPointIndex = (currentPointIndex + 1) % patrolPoints.Length;
+                currentPointIndex = (currentPointIndex + 1) % patrolPoints.Count;
                 destinationSetter.target = patrolPoints[currentPointIndex];
             }
         }
+    }
+
+    public void addAllPoints()
+    {
+        patrolPoints.AddRange(potentialPatrolPoints);
+    }
+
+    public void addPatrolPoint(Transform newPp)
+    {
+        patrolPoints.Add(newPp);
+    }
+
+    public void removePatrolPoint(Transform newPp)
+    {
+        if (patrolPoints.Contains(newPp))
+            patrolPoints.Remove(newPp);
     }
 }
