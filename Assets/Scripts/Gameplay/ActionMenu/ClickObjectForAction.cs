@@ -46,7 +46,7 @@ namespace Assets.Scripts.Gameplay.ActionMenu
             if(Input.GetMouseButtonUp(1))
             {
                 ClearBtn();
-                _menu.gameObject.SetActive(false);
+                if(_menu != null)_menu.gameObject.SetActive(false);
             }
         }
         
