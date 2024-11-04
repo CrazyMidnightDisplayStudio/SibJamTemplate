@@ -386,15 +386,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4488483717912846454, guid: 396b041c17f383343a8b673952890fec,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4761945240935558146, guid: 396b041c17f383343a8b673952890fec,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.741
+      value: 3.83
       objectReference: {fileID: 0}
     - target: {fileID: 4761945240935558146, guid: 396b041c17f383343a8b673952890fec,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.958
+      value: 8.89
       objectReference: {fileID: 0}
     - target: {fileID: 4761945240935558146, guid: 396b041c17f383343a8b673952890fec,
         type: 3}
@@ -775,6 +780,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Box (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488483717912846454, guid: 396b041c17f383343a8b673952890fec,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4761945240935558146, guid: 396b041c17f383343a8b673952890fec,
         type: 3}
@@ -5132,6 +5142,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Broken Box (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980880381826847435, guid: e0a725cf3ab6077458a211f28bcbfb32,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7380089110918448822, guid: e0a725cf3ab6077458a211f28bcbfb32,
         type: 3}
@@ -10168,6 +10183,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4488483717912846454, guid: 396b041c17f383343a8b673952890fec,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4761945240935558146, guid: 396b041c17f383343a8b673952890fec,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10481,6 +10501,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Box (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488483717912846454, guid: 396b041c17f383343a8b673952890fec,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4761945240935558146, guid: 396b041c17f383343a8b673952890fec,
         type: 3}
@@ -11047,6 +11072,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5764515062377958412, guid: 39bfb1f7a02ebd24585d75e268137a47,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11416,12 +11446,12 @@ PrefabInstance:
     - target: {fileID: 2651140926829360397, guid: d8460e27fa9a85843b62886354d89fb3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.16
+      value: -9.09
       objectReference: {fileID: 0}
     - target: {fileID: 2651140926829360397, guid: d8460e27fa9a85843b62886354d89fb3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.47
+      value: 8.69
       objectReference: {fileID: 0}
     - target: {fileID: 2651140926829360397, guid: d8460e27fa9a85843b62886354d89fb3,
         type: 3}
@@ -15612,15 +15642,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Broken Box (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4980880381826847435, guid: e0a725cf3ab6077458a211f28bcbfb32,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7380089110918448822, guid: e0a725cf3ab6077458a211f28bcbfb32,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.45
+      value: 3.14
       objectReference: {fileID: 0}
     - target: {fileID: 7380089110918448822, guid: e0a725cf3ab6077458a211f28bcbfb32,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.94
+      value: 9.32
       objectReference: {fileID: 0}
     - target: {fileID: 7380089110918448822, guid: e0a725cf3ab6077458a211f28bcbfb32,
         type: 3}
@@ -15820,6 +15855,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Broken Shelf (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175961988297417577, guid: 537a5506e246987429e97f668a1f5a10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17193,12 +17233,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4488483717912846454, guid: 396b041c17f383343a8b673952890fec,
         type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000,
-        type: 0}
-    - target: {fileID: 4488483717912846454, guid: 396b041c17f383343a8b673952890fec,
-        type: 3}
       propertyPath: m_Name
       value: Box
       objectReference: {fileID: 0}
@@ -17712,6 +17746,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf
       objectReference: {fileID: 0}
+    - target: {fileID: 5764515062377958412, guid: 39bfb1f7a02ebd24585d75e268137a47,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17785,6 +17824,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Table
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142988854198447993, guid: d8460e27fa9a85843b62886354d89fb3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18404,6 +18448,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Broken Shelf
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175961988297417577, guid: 537a5506e246987429e97f668a1f5a10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
