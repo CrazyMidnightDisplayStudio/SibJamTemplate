@@ -710,10 +710,10 @@ TextureImporter:
       name: EnemySignature
       rect:
         serializedVersion: 2
-        x: 229
-        y: 421
-        width: 22
-        height: 22
+        x: 227
+        y: 419
+        width: 24
+        height: 26
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1466,10 +1466,10 @@ TextureImporter:
       name: EnemySignature2
       rect:
         serializedVersion: 2
-        x: 261
-        y: 421
-        width: 22
-        height: 22
+        x: 259
+        y: 419
+        width: 24
+        height: 26
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1487,10 +1487,10 @@ TextureImporter:
       name: EnemySignature3
       rect:
         serializedVersion: 2
-        x: 293
-        y: 421
-        width: 22
-        height: 22
+        x: 291
+        y: 419
+        width: 24
+        height: 26
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1508,10 +1508,10 @@ TextureImporter:
       name: EnemySignature4
       rect:
         serializedVersion: 2
-        x: 325
-        y: 421
-        width: 22
-        height: 22
+        x: 323
+        y: 419
+        width: 24
+        height: 26
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1924,6 +1924,69 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: BrokenBot
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 199
+        width: 21
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a82afb9ae5ca4144ac5c65ca0fa13bc
+      internalID: -2139496135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_77
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 215
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 823f35b0096710841a5056c4b2ce313b
+      internalID: 1108434414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_78
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 231
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0b3dc14c40299b4bb674f041ed82ecc
+      internalID: 129709645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -2010,8 +2073,11 @@ TextureImporter:
       Atlas_74: -202003881
       Atlas_75: -754829416
       Atlas_76: -1167150293
+      Atlas_77: 1108434414
+      Atlas_78: 129709645
       Atlas_8: 182890934
       Atlas_9: 1699074843
+      BrokenBot: -2139496135
       EnemySignature: -898977773
       EnemySignature2: -1638550117
       EnemySignature3: -1853388849

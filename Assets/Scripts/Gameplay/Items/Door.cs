@@ -7,23 +7,30 @@ namespace Gameplay.Items
         [SerializeField] private int _doorID;
         private Collider2D doorCollider;
         private Animator animator;
-        
+
+        private SpriteRenderer lockedSign;
+
         public bool IsOpen { get; private set; }
         public bool IsLocked { get; private set; }
         public int DoorID => _doorID;
-    
+
         private void Awake()
         {
             doorCollider = transform.parent.GetComponent<Collider2D>();
             animator = transform.parent.GetComponent<Animator>();
+            lockedSign = GetComponentInChildren<SpriteRenderer>();
         }
-        
+
         public void Lock() => IsLocked = true;
         public void Unlock() => IsLocked = false;
 
         public void OpenDoor()
         {
-            if (IsLocked) return;
+            if (IsLocked)
+            {
+                lockedSign.enabled = true;
+                return;
+            }
             animator.SetTrigger("Open");
             doorCollider.enabled = false;
             IsOpen = true;
@@ -48,6 +55,7 @@ namespace Gameplay.Items
         {
             if (other.CompareTag("Player") || other.CompareTag("Human"))
             {
+                lockedSign.enabled = false;
                 CloseDoor();
             }
         }
