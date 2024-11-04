@@ -2,6 +2,7 @@ using UnityEngine;
 using Pathfinding;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 
 public class HumanController : MonoBehaviour
 {
@@ -26,6 +27,33 @@ public class HumanController : MonoBehaviour
 
     [SerializeField] Volume volume;
     private ChannelMixer channelMixer;
+
+    [SerializeField] private Image _keyCard1;
+    [SerializeField] private Image _keyCard2;
+
+    private int _haveKeyCardNumber;
+    public int HaveKeyCardNumber
+    {
+        get => _haveKeyCardNumber;
+        set
+        {
+            switch (value)
+            {
+                case 0:
+                    _keyCard1.enabled = false;
+                    _keyCard2.enabled = false;
+                    break;
+                case 1:
+                    _keyCard1.enabled = true;
+                    _keyCard2.enabled = false;
+                    break;
+                case 2:
+                    _keyCard2.enabled = true;
+                    _keyCard1.enabled = false;
+                    break;
+            }
+        }
+    }
 
     public enum MovementStyle
     {
@@ -65,6 +93,7 @@ public class HumanController : MonoBehaviour
         }
 
         InvokeRepeating("UpdatePath", 0f, 0.5f);
+        HaveKeyCardNumber = 0;
     }
 
     void UpdatePath()

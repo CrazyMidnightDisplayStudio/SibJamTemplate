@@ -88,6 +88,17 @@ namespace Gameplay.Items
             }
         }
 
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Human"))
+            {
+                if (other.GetComponent<HumanController>().HaveKeyCardNumber == 1)
+                {
+                    // TODO : Open Doors
+                }
+            }
+        }
+
         private async UniTask UnlockDoorsWithDelay(float delay)
         {
             var audioSource = GetComponent<AudioSource>();

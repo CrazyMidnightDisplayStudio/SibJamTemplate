@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
     private void PassTheKeyCard1()
     {
         CMDEventBus.Publish(new CurrentEvent("PassTheKeyCard1"));
-        Destroy(_keyCard1.gameObject);
+        _keyCard1.enabled = false;
         Destroy(_passKeyCollider);
     }
 
@@ -58,6 +58,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.tag == "Human")
         {
+            collision.GetComponent<HumanController>().HaveKeyCardNumber = 1;
             PassTheKeyCard1();
         }
     }
