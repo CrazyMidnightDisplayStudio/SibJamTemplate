@@ -1,8 +1,9 @@
 using UnityEngine;
 using Pathfinding;
-using Unity.VisualScripting;
 using System.Collections.Generic;
 using System.Collections;
+using Core.Services.EventBus;
+using Game.Services.Events;
 
 public class Patrol : MonoBehaviour
 {
@@ -52,6 +53,15 @@ public class Patrol : MonoBehaviour
                 destinationSetter.target = patrolPoints[currentPointIndex];
             }
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag(highPriorityTag) || other.gameObject.CompareTag("Player"))
+        {
+            CMDEventBus.Publish(new CurrentEvent("GameOver"));
+        }
+
     }
 
     public void addAllPoints()

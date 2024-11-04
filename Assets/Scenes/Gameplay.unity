@@ -15551,12 +15551,12 @@ PrefabInstance:
         type: 3}
       propertyPath: 'potentialPatrolPoints.Array.data[0]'
       value: 
-      objectReference: {fileID: 872274685}
+      objectReference: {fileID: 1507692536}
     - target: {fileID: 1569348258028569566, guid: b8a350822284f0a47ba5da589783ab18,
         type: 3}
       propertyPath: 'potentialPatrolPoints.Array.data[1]'
       value: 
-      objectReference: {fileID: 116023266}
+      objectReference: {fileID: 1260987796}
     - target: {fileID: 1569348258028569566, guid: b8a350822284f0a47ba5da589783ab18,
         type: 3}
       propertyPath: 'potentialPatrolPoints.Array.data[2]'
@@ -15566,12 +15566,12 @@ PrefabInstance:
         type: 3}
       propertyPath: 'potentialPatrolPoints.Array.data[3]'
       value: 
-      objectReference: {fileID: 1260987796}
+      objectReference: {fileID: 116023266}
     - target: {fileID: 1569348258028569566, guid: b8a350822284f0a47ba5da589783ab18,
         type: 3}
       propertyPath: 'potentialPatrolPoints.Array.data[4]'
       value: 
-      objectReference: {fileID: 1507692536}
+      objectReference: {fileID: 872274685}
     - target: {fileID: 3027612629195013261, guid: b8a350822284f0a47ba5da589783ab18,
         type: 3}
       propertyPath: m_Icon
@@ -16345,6 +16345,12 @@ PrefabInstance:
       propertyPath: _keyCard1
       value: 
       objectReference: {fileID: 90114591}
+    - target: {fileID: 1162526844013233808, guid: 868d6346fbebb7c47a356d7930c180a8,
+        type: 3}
+      propertyPath: brokenSprite
+      value: 
+      objectReference: {fileID: -2139496135, guid: 95107471d6859a34cbbfddf286c68be9,
+        type: 3}
     - target: {fileID: 1715498563624028558, guid: 868d6346fbebb7c47a356d7930c180a8,
         type: 3}
       propertyPath: m_Icon
