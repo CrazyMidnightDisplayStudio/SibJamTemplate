@@ -1,10 +1,13 @@
 ﻿using R3;
 using System;
 using System.Collections.Generic;
+using Core.Services.EventBus;
+using Game.Services.Events;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Zenject;
 
 namespace Assets.Scripts.Gameplay.ActionMenu
 {
@@ -71,9 +74,9 @@ namespace Assets.Scripts.Gameplay.ActionMenu
         }
         
         //получаем список объектов на с которыми можно взаимодействовать
-        public List<IInteractAcnion> GetGameObjectsPoint(Vector3 point)
+        public List<IInteractAction> GetGameObjectsPoint(Vector3 point)
         {
-            List<IInteractAcnion> gameObjects = new List<IInteractAcnion>();
+            List<IInteractAction> gameObjects = new List<IInteractAction>();
         
             // Получаем все объекты, пересекаемые лучом
             RaycastHit2D[] hits = Physics2D.RaycastAll(point, Vector2.zero);
@@ -82,14 +85,14 @@ namespace Assets.Scripts.Gameplay.ActionMenu
             {
                 // Получаем объект, по которому был произведен клик
                 GameObject clickedObject = hit.collider.gameObject;
-                var interact = clickedObject.GetComponent<IInteractAcnion>();
+                var interact = clickedObject.GetComponent<IInteractAction>();
                 if (interact != null) gameObjects.Add(interact);
             }
         
             return gameObjects;
         }
         
-        private void CreateBtnAndSubs(List<IInteractAcnion> interactAcnions)
+        private void CreateBtnAndSubs(List<IInteractAction> interactAcnions)
         {
             foreach (var interact in interactAcnions)
             {
@@ -108,6 +111,7 @@ namespace Assets.Scripts.Gameplay.ActionMenu
                 (
                     _ => {
                         action.Invoke();
+                        CMDEventBus.Publish(new CurrentEvent(action.Method.Name));
                         _menu.gameObject.SetActive(false);
                     }
                 ).AddTo(btn.gameObject);
@@ -131,9 +135,9 @@ namespace Assets.Scripts.Gameplay.ActionMenu
             buttons.Clear();
         }
         
-        private List<IInteractAcnion> BaseCommandList(Transform point)
+        private List<IInteractAction> BaseCommandList(Transform point)
         {
-            IInteractAcnion actions = new ActionHumanMove(creatorPoint.GetHumanController(), point);
+            IInteractAction actions = new ActionHumanMove(creatorPoint.GetHumanController(), point);
         
             return new() { actions };
         }

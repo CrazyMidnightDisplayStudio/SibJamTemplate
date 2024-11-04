@@ -6,10 +6,12 @@ namespace Game.Services.Debugging.Gameplay.Services
 {
     public class DoorsService
     {
-        private Dictionary<int, Door> _doorsMap = new Dictionary<int, Door>();
+        private Dictionary<int, Door> _doorsMap;
 
         public DoorsService()
         {
+            _doorsMap = new Dictionary<int, Door>();
+            
             GameObject doors = GameObject.Find("Doors");
             if (doors == null)
             {
