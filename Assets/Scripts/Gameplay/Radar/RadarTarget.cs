@@ -20,12 +20,19 @@ namespace Game.Services.Debugging.Gameplay.Radar
 
         private void Start()
         {
+            // turn OFF target Renderer
+            _targetRenderer.enabled = false;
+            
+            // add layer
             gameObject.layer = LayerMask.NameToLayer("RadarTarget");
+            
+            // add components
             _echoRenderer = gameObject.AddComponent<SpriteRenderer>();
             _targetCollider = gameObject.AddComponent<CapsuleCollider2D>();
+            
+            // setup components
             _targetCollider.isTrigger = true;
             _targetCollider.size = new Vector2(0.2f, 0.2f);
-            
             _echoRenderer.sprite = _targetRenderer.sprite;
             _echoRenderer.color = _targetRenderer.color;
             _echoRenderer.enabled = false;

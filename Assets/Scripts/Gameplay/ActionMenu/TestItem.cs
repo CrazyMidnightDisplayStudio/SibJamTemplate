@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Gameplay.ActionMenu
 {
-    public class TestItem : MonoBehaviour, IInteractAcnion
+    public class TestItem : MonoBehaviour, IInteractAction
     {
 
         private Dictionary<string, Action> _actions = new Dictionary<string, Action>();
